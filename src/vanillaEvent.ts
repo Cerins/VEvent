@@ -2,6 +2,9 @@ declare type VEventHandlerWithThis = (this:VEventTarget, v:VEvent<any>) => void;
 declare type VEventHandlerWithoutThis = (v:VEvent<any>) => void;
 declare type VEventHandler = VEventHandlerWithThis | VEventHandlerWithoutThis;
 
+/**
+ * Object that can receive events and have listeners for them.
+ */
 class VEventTarget {
   /**
    * A collection of registered events.
@@ -119,12 +122,24 @@ interface CustomEventInit{
 }
 
 class VEvent<T extends VEventTarget> {
+  /**
+   * The name of the event. Case-sensitive.
+   */
   type: string;
 
+  /**
+   * Can be used to give additional detail to the event handler. 
+   */
   detail: unknown;
 
+  /**
+   * Currently is not implemented.
+   */
   currentTarget: T | undefined;
 
+  /**
+   * Reference to the object onto which the event was dispatched.
+   */
   target: T | undefined;
 
   constructor(type: string, customEventInit?: CustomEventInit) {
