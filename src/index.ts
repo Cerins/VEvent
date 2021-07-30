@@ -1,7 +1,7 @@
-import { VEventTarget, VEvent } from "./vanillaEvent";
+import { VEventTarget, VEvent } from './vanillaEvent';
 
-declare global {function publishToGlobal(assets: Object):void}
+declare global {function publishToGlobal(assets: Record<string, unknown>):void;}
 global.publishToGlobal({
-    VEventTarget,
-    VEvent
-}); 
+  VEventTarget,
+  VEvent,
+});

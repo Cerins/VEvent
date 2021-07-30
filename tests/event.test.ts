@@ -125,7 +125,7 @@ test('Inheritance example', () => {
       this.dispatchEvent(new VEvent('update'));
     }
   }
-  const hungerLevels: {[name: string]: number;} = {};
+  const hungerLevels: { [name: string]: number; } = {};
   const cat = new Cat('Kitty');
   cat.addEventListener('update', function temp(this: Cat) {
     hungerLevels[this.name] = this.hunger;

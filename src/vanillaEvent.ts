@@ -128,7 +128,7 @@ class VEvent<T extends VEventTarget> {
   type: string;
 
   /**
-   * Can be used to give additional detail to the event handler. 
+   * Can be used to give additional detail to the event handler.
    */
   detail: unknown;
 
